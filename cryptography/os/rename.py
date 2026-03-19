@@ -29,7 +29,7 @@ def obfuscate_files(folder_path): #(文件夹的路径)
 
         #确保它是一个文件而不是文件夹
         if os.path.isfile(old_path):
-            #生成新名字，例如：secret_0.moment.dat
+            #生成新名字，例如：secret_0.dat
             #使用手动计数器
             new_name=f"secret_{count}.dat"
             new_path=os.path.join(folder_path,new_name)
@@ -55,7 +55,7 @@ def restore_files(folder_path):
     key_path = os.path.join(folder_path, "key.json")
     #检查钥匙是否存在
     if not os.path.exists(key_path):
-        print("找不到钥匙文件key.json")
+        print("找不到钥匙文件key.json！")
         return
 
     with open(key_path,"r",encoding="utf-8") as f:
