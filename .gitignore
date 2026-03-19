@@ -1,0 +1,6 @@
+venv/
+pycache/
+data/
+python_repos.py
+.idea/
+*.json
