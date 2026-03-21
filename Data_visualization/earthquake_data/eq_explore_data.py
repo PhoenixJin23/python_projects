@@ -58,3 +58,4 @@ fig=px.scatter(
 #将绘制图像存为html格式，使程序不运行也能查看该图像
 fig.write_html('global_earthquakes.html')
 fig.show()
+
