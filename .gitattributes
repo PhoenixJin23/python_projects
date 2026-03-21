@@ -2,3 +2,4 @@
 *.py linguist-language=Python
 # （可选）如果有HTML文件，可降低其权重
 *.html linguist-language=HTML linguist-documentation=true
+* text=auto
