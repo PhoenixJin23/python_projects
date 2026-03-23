@@ -8,13 +8,14 @@ def get_folder_size(folder_path):
     """计算一个文件夹的总大小"""
     total_size=0
     try:
-        #os.walk返回 路径、文件夹名列表、文件名列表
+        #os.walk返回 路径、文件夹名列表、文件名列表（递归的“深度搜索”）
         for dirpath,dirnames,filenames in os.walk(folder_path):
             for f in filenames:
                 fp=os.path.join(dirpath,f)
                 #累加每个文件的大小
                 if os.path.exists(fp):
                     total_size+=os.path.getsize(fp)
+                    #getsize返回的是字节，1KB=1024Byte，1MB=1024Byte
     except Exception as e:
         print(f"读取{folder_path}出错：{e}")
     return total_size/(1024*1024) #换算成MB
@@ -26,8 +27,7 @@ def analyze_disk_usage(target_dir):
 
     #获取目标目录下所有的子文件夹
     print("正在扫描，请稍后...")
-    items=os.listdir(target_dir) #items是字典里（目标目录下）所有的键值对（子文件夹）
-
+    items=os.listdir(target_dir) #返回目标文件夹包含的文件（夹）名字列表，只能看到第一层文件（夹）
     for item in items:
         item_path=os.path.join(target_dir,item)
         if os.path.isdir(item_path):
@@ -50,6 +50,6 @@ def analyze_disk_usage(target_dir):
     plt.show()
 
 
-analyze_disk_usage("D:/")
+analyze_disk_usage("D:/PythonProjects/_my_project")
 
 
