@@ -1,14 +1,27 @@
 import pandas as pd
 import os
 
+
+# 诊断微信账单
+def diagnose_wechat(file_path):
+    # 先只读前 20 行，不跳行，看看数据从哪开始
+    df = pd.read_csv(file_path, encoding="utf-8", nrows=20)
+    print("--- 微信账单前 20 行内容 ---")
+    for i, row in df.iterrows():
+        print(f"行号 {i}: {list(row.values)}")
+
+# 运行诊断
+#diagnose_wechat("C:/Users/g3472/Desktop/wechat.csv")
+
+
 def clean_wechat_bill(file_path):
     #跳过微信账单前16行的说明
     #encoding='gbk'处理中文CSV
     try:
-        # 兼容所有微信 CSV 编码（终极方案）
-        df = pd.read_csv(file_path, skiprows=16, encoding="utf-8")
+        # 兼容所有微信CSV编码
+        df = pd.read_csv(file_path, skiprows=17, encoding="utf-8")
     except:
-        df = pd.read_csv(file_path, skiprows=16, encoding="gb18030")
+        df = pd.read_csv(file_path, skiprows=17, encoding="gb18030")
 
     #只保留需要的列，并重命名为统一格式
     #微信原始列名：交易时间, 交易类型, 交易对方, 商品, 收/支, 金额(元)
@@ -27,7 +40,7 @@ def clean_wechat_bill(file_path):
 def clean_alipay_bill(file_path):
     #跳过前面24行说明
     try:
-        # 兼容所有微信 CSV 编码（终极方案）
+        # 兼容所有微信CSV编码
         df = pd.read_csv(file_path, skiprows=24, encoding="utf-8")
     except:
         df = pd.read_csv(file_path, skiprows=24, encoding="gb18030")
@@ -56,7 +69,7 @@ def merge_bills(wechat_csv,alipay_csv):
     combined_df=pd.concat([wechat_df,alipay_df],ignore_index=True)
 
     #按日期排序
-    combined_df['日期']=pd.to_datetime(combined_df['日期'])
+    combined_df['日期']=pd.to_datetime(combined_df['日期'],format='mixed',errors='coerce')
     combined_df=combined_df.sort_values(by='日期')
 
     #保存为统一的CSV
