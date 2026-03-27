@@ -65,4 +65,3 @@ find_duplicates("C:/Users/g3472/Desktop/cutiemice")
 
 
 
-

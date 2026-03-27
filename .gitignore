@@ -5,3 +5,5 @@ python_repos.py
 .idea/
 *.json
 *.code-workspace
+.venv/
+march_total_bill.csv
