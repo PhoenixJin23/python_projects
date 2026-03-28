@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from unicodedata import category
+
 
 #解决中文显示问题
 plt.rcParams['font.sans-serif']=['SimHei']
@@ -29,16 +29,20 @@ def auto_category(row):
 def run_analysis(csv_path):
     #读取合并后的账单
     df=pd.read_csv(csv_path)
-    df['日期']=pd.to_datetime(df['日期'])
+    df['日期']=pd.to_datetime(df['日期']) #把“文本日期”变成“真正的日期”,(可以按天统计，可以排序可以作差)
 
     #应用自动分类逻辑，产生一个新列“类别”
-    df['类别']=df.apply(auto_category,axis=1)
+    df['类别']=df.apply(auto_category,axis=1) #df.apply(...,axis=1)=对每一行执行操作auto_category函数
+    #axis=0是列，axis=1是行，没有其它数了！
+    #每一列占原来表格的很多行，并且是分散的
 
-    #分析1：日消费趋势
-    daily_spending=df.groupby(df['日期'].dt.date)['金额'].sum()
+    #分析1：日消费趋势(按天汇总)
+    daily_spending=df.groupby(df['日期'].dt.date)['金额'].sum() #groupby()分组,只读取日期中的date部分,只看金额这一列
+    #按‘日期’分类，表格只剩下‘日期’和‘金额’两列，再对每一组（每一天）的金额求和
 
     #分析2：类别占比
     category_spending=df.groupby('类别')['金额'].sum()
+    #按‘类别’分类，表格只剩下‘类别’和‘金额’两列，再对每一类的金额求和
 
     #绘图（包含两个子图的画布）
     fig,(ax1,ax2)=plt.subplots(2,1,figsize=(12,10))
