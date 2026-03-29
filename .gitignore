@@ -1,6 +1,7 @@
 venv/
 pycache/
-data/
+earthquake_data/
+weather_data/
 python_repos.py
 .idea/
 *.json
