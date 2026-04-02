@@ -3,8 +3,9 @@ from bs4 import BeautifulSoup
 import time
 
 
+"""遗憾离场的一集，《惑空城初探金价隐，识动态方知爬虫艰》"""
 def get_realtime_gold_price():
-    url="https://www.huilvbiao.com/gold"
+    url="https://quote.cngold.org/gjs/"
 
     headers={"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0"}
     try:
@@ -12,7 +13,7 @@ def get_realtime_gold_price():
         if response.status_code==200:
             soup=BeautifulSoup(response.text,"html.parser")
 
-            price_tag=soup.find("p",id="new")
+            price_tag=soup.find("dd",id="JO_92233_price")
             if price_tag:
                 #strip=True去掉前后空格
                 price=price_tag.get_text(strip=True)
