@@ -14,3 +14,5 @@ for start_num in range(0,250,25):
         title_string=title.string
         if "/" not in title_string:
             print(title_string)
+
+            

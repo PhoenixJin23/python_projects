@@ -44,3 +44,5 @@ def monitor_gold(interval_seconds=60):
 
 
 monitor_gold(10)
+
+
