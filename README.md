@@ -1,19 +1,18 @@
-<<<<<<< HEAD
 # Python Practice Projects
 
 ## 目录
 
-#### **<u>仓库简介</u>**
+#### * 仓库简介
 
-#### **<u>目录结构</u>**
+#### * 目录结构
 
-#### **<u>项目概览</u>**
+#### * 项目概览
 
-#### **<u>技术栈</u>**
+#### * 技术栈
 
-#### **<u>学习收获</u>**
+#### * 学习收获 
 
-#### **<u>后续计划</u>**
+#### * 后续计划
 
 
 
@@ -51,11 +50,3 @@ Python_projects/
 
 
 
-=======
-# Hi
-## HiHi
-### HiHiHi
-Welcome to my repository--python_projects.
-Here you can see many basic yet detailed python projects, updating everyday.
-Thx for your valuable time. I ain't got a README yet though lol...
->>>>>>> 919a5b3fd6dfc21041fc6e1a3ed7775067205cd9
