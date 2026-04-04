@@ -2,23 +2,27 @@
 
 ## 目录
 
-#### * 仓库简介
+* #### **仓库简介**
 
-#### * 目录结构
+* #### **目录结构**
 
-#### * 项目概览
+* #### 项目概览
 
-#### * 技术栈
+* #### 技术栈
 
-#### * 学习收获 
+* #### 学习收获 
 
-#### * 后续计划
+* #### 后续计划
+
+
 
 
 
 #### 1. 仓库简介
 
 这个仓库记录了我的Python学习和练习项目，包括书本/网课练习项目、文件自动化、图像处理、数据分析和基本的爬虫项目。  建这个仓库不光是为了练习Python语法，也是为了记录整个Python学习与实践过程，核心是为了锻炼用Python解决日常实际问题的能力。
+
+
 
 
 
@@ -48,8 +52,5 @@ Python_projects/
 | Data Analysis | ledger_analyzer.py | Analyze expenses and visualize daily/category spending       |
 | Web Scraper   | books scraper      | Scrape book titles, prices, and ratings from a static website |
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 127d10c011d1e5af35671292f82a85a60429d243
