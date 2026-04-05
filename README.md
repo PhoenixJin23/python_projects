@@ -39,6 +39,8 @@ Python_projects/
 
 
 
+
+
 #### 3. 项目概览
 
 | Category      | Project            | Description                                                  |
@@ -51,6 +53,20 @@ Python_projects/
 | Data Analysis | bill_merger.py     | Merge WeChat and Alipay bills into one CSV                   |
 | Data Analysis | ledger_analyzer.py | Analyze expenses and visualize daily/category spending       |
 | Web Scraper   | books scraper      | Scrape book titles, prices, and ratings from a static website |
+
+
+
+
+
+#### 4. 技术栈
+
+- Python
+- os / pathlib
+- pandas
+- matplotlib
+- Pillow
+- requests
+- BeautifulSoup
 
 
 
