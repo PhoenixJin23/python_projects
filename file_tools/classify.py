@@ -31,7 +31,6 @@ def classify_files(target_dir):
 
             if extension in extension_rules:
                 folder_name=extension_rules[extension] #由后缀名对应文件类型
-                folder_path=os.path.join(target_dir,folder_name)
             else: #不在规则里，就去others
                 folder_name="others"
 
