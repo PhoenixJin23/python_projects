@@ -2,7 +2,7 @@
 
 ## file_tools
 
-### pdf_tool.py 自动化办公——PDF 合并与加密工具
+### pdf_tool.py PDF 合并与加密工具
 
 #### 目标：批量合并多个 PDF 文件，并统一加上访问密码。
 
@@ -63,3 +63,42 @@
 ### duplicate.py
 
 #### 目标：扫描一个文件夹，找出内容完全一模一样的文件（即使名字不同），并把多余的删掉。
+
+
+
+
+
+
+
+### folder_analyzer.py 文件夹大小可视化分析仪
+
+#### 目标：扫描一个文件夹，计算每个子文件夹的大小，并画出一个饼图。
+
+1. 先构造计算文件夹大小的工具函数
+2. <u>打开文件夹，找到目标文件夹下的文件夹，对它们调用计算文件夹大小的函数</u>
+3. 绘制饼状图
+
+* import matplotlib.pyplot as plt
+* os
+* <u>os.walk() 递归的深度搜索，可以得到目标文件夹所有（每一层）下属的文件（夹），而 os.listdir() 只能看到第一层</u>
+* path.getsize() 返回的是Byte单位 1KB=1024Byte, 1MB=1024KB
+* get_folder_size(folder_path)是被analyze_disk_usage(target_dir)调用的工具函数，folder_path是target_dir目标文件夹下属的文件夹路径
+* plt.rcParams['font.sans-serif']=['SimHei'] 设置中文字体防止绘图时乱码
+
+
+
+
+
+### image_processor.py 图片批量缩放与水印工具
+
+#### 目标：自动读取文件夹里的图片，统一缩小尺寸并打上你的名字水印。
+
+1. 创建/打开输出文件夹
+2. 打开目标文件夹，检查后缀，只处理图片
+3. 打开图片，缩放图片，为图片加上滤镜
+4. 保存图片到输出文件夹
+
+* from PIL import Image, ImageDraw, ImageFont
+* os
+* img.resize((width,height))
+* draw.text() 实质是在图片上绘制文字
