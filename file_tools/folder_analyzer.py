@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 #设置中文字体（防止绘图时中文乱码，Windows通用）
 plt.rcParams['font.sans-serif']=['SimHei']
 
-def get_folder_size(folder_path):
-    """计算一个文件夹的总大小"""
+def get_folder_size(folder_path): #folder_path是target_dir下属文件夹的路径
+    """计算一个文件夹的总大小（工具函数，被主程序调用）"""
     total_size=0
     try:
         #os.walk返回 路径、文件夹名列表、文件名列表（递归的“深度搜索”）
@@ -15,7 +15,7 @@ def get_folder_size(folder_path):
                 #累加每个文件的大小
                 if os.path.exists(fp):
                     total_size+=os.path.getsize(fp)
-                    #getsize返回的是字节，1KB=1024Byte，1MB=1024Byte
+                    #getsize返回的是字节，1KB=1024Byte，1MB=1024KB
     except Exception as e:
         print(f"读取{folder_path}出错：{e}")
     return total_size/(1024*1024) #换算成MB
@@ -32,7 +32,7 @@ def analyze_disk_usage(target_dir):
         item_path=os.path.join(target_dir,item)
         if os.path.isdir(item_path):
             #计算每个子文件夹的大小
-            size=get_folder_size(item_path)
+            size=get_folder_size(item_path) #调用get_folder_size()这个工具函数
             if size>0.1: #只记录大于0.1MB的文件夹，防止图表太乱
                 folder_names.append(item)
                 folder_sizes.append(size)
@@ -50,6 +50,6 @@ def analyze_disk_usage(target_dir):
     plt.show()
 
 
-analyze_disk_usage("D:/PythonProjects/_my_project")
+analyze_disk_usage("C:/Users/g3472/Desktop/cutiemice")
 
 
