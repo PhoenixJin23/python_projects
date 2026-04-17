@@ -4,7 +4,7 @@
 
 这个仓库不仅用于练习 Python 语法，也用于尝试把学到的知识逐步做成可复用的小工具，并持续维护到 GitHub 上。
 
-
+![Python](https://img.shields.io/badge/Python-3.11-blue)![Status](https://img.shields.io/badge/status-updating-brightgreen)![GitHub last commit](https://img.shields.io/github/last-commit/PhoenixJin23/python_projects)
 
 
 
@@ -12,17 +12,17 @@
 
 \- [仓库简介](#1-仓库简介) - [目录结构](#2-目录结构) - [项目概览](#3-项目概览) - [技术栈](#4-技术栈) - [学习收获](#5-学习收获) - [后续计划](#6-后续计划)
 
-* #### **仓库简介**
+* #### **📌仓库简介**
 
-* #### **目录结构**
+* #### **🗂️目录结构**
 
-* #### 项目概览
+* #### **🚀项目概览**
 
-* #### 技术栈
+* #### **🛠️技术栈**
 
-* #### 学习收获 
+* #### **🌱学习收获 **
 
-* #### 后续计划
+* #### **📍后续计划**
 
 
 
