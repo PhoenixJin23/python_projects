@@ -1,5 +1,5 @@
 import os
-from PIL import Image, ImageDraw, ImageFont #Python最流行的图像处理库
+from PIL import Image,ImageDraw,ImageFont #Python最流行的图像处理库
 
 
 #创建/打开output_dir--->遍历input_dir--->检查后缀，只处理图片--->
@@ -46,14 +46,15 @@ def batch_process_images(input_dir, output_dir, watermark_text="evermore"):
                     #绘制文字（颜色为白色，RGBA格式）A是透明度（0-255）
                     draw.text(position,watermark_text,font=font,fill=(255,255,255,128))
 
-                    #保存结果
-                    save_path=os.path.join(output_dir,f"processed_{filename}")
+                    #格式转换与保存 (转为 WebP 格式，体积更小)
+                    file_name=os. path.splitext(filename)[0]+".webp"
+                    save_path=os.path.join(output_dir,file_name)
                     img.save(save_path)
-                    print(f"处理成功:{filename}")
+                    print(f"处理成功:{file_name}")
 
             except Exception as e:
                 print(f"处理{filename} 失败{e}")
 
 
-batch_process_images("C:/Users/g3472/Desktop/cutiemice/images","C:/Users/g3472/Desktop/cutiemice/output")
+batch_process_images("C:/Users/g3472/Desktop/cutiemice/images","C:/Users/g3472/Desktop/cutiemice/output2")
 
