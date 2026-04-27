@@ -20,7 +20,7 @@
 
 * #### **🛠️技术栈**
 
-* #### **🌱学习收获 **
+* #### 🌱学习收获
 
 * #### **📍后续计划**
 
@@ -82,6 +82,7 @@ Python_projects/
 - BeautifulSoup
 - PyPDF2
 - PIL
+- Streamlit
 
 
 
