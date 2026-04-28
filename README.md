@@ -63,9 +63,9 @@ Python_projects/
 | file_tools    | image_to_PDF.py    | Convert images to PDF e-books                                |
 | file_tools    | PDF_to_txt.py      | PDF text extractor                                           |
 | Image Tools   | image_processor.py | Batch resize images and add watermark                        |
-| Data Analysis | bill_merger.py     | Merge WeChat and Alipay bills into one CSV                   |
-| Data Analysis | ledger_analyzer.py | Analyze expenses and visualize daily/category spending       |
-| Web Scraper   | books scraper      | Scrape book titles, prices, and ratings from a static website |
+| data_analysis | bill_merger.py     | Merge WeChat and Alipay bills into one CSV                   |
+| data_analysis | ledger_analyzer.py | Analyze expenses and visualize daily/category spending       |
+| web_scraper   | web_crawler_2.py   | Scrape book titles, prices, and ratings from a static website |
 
 
 
