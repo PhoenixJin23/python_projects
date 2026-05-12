@@ -11,6 +11,7 @@ PyCharm 默认不会自动激活终端里的 venv
 系统 Python 和项目 venv 是两个完全独立的 “房间”，东西不能共用"""
 
 
+
 """🛠️ 关键解决步骤：一步步从混乱到规范
 1. 认识并激活 venv
 关键操作：venv\Scripts\activate
@@ -31,3 +32,10 @@ from PIL import Image → 安装要写 pip install pillow
 from bs4 import BeautifulSoup → 安装要写 pip install beautifulsoup4
 结果：项目里的爆红报错全部消失，代码能正常运行了
 """
+
+
+"""💡 你现在彻底搞懂的核心知识点
+venv 的本质：每个项目的独立 “隔离箱”，互不干扰，不会再出现 “这个项目能用，那个项目就崩” 的情况
+pip install 的规则：装到哪个环境，取决于当前激活的 Python，和你终端在哪个文件夹无关
+IDE 和终端的一致性：PyCharm 解释器、终端激活状态，必须都指向同一个 venv，不然就会出现 “IDE 里爆红，终端里能跑” 的奇葩问题
+系统 Python 和项目 venv 的关系：系统 Python 是 “公共仓库”，venv 是 “私人房间”，房间里的东西不会自动跑到仓库里，反之亦然"""
